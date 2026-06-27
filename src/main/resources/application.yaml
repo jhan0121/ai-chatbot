@@ -1,3 +1,25 @@
 spring:
   application:
     name: ai-chatbot
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:jre3btmaes2gfdvozipsck1jklnjgfjgfn3kjgfbovcv2vbnkjflgf4kjb7j2khiljyhgfd4dfwaesdsg3tyrtdsf2vbhtrs}
+    expiration-ms: 86400000
+  admin:
+    email: ${ADMIN_EMAIL:admin@example.com}
+    password: ${ADMIN_PASSWORD:admin1234}
+    name: ${ADMIN_NAME:admin}

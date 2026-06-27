@@ -1,6 +1,9 @@
 spring:
   application:
     name: ai-chatbot
+  config:
+    import:
+      - optional:file:.env[.properties]
   h2:
     console:
       enabled: true
